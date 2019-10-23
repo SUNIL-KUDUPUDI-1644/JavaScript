@@ -1,0 +1,16 @@
+<!DOCTYPEHTML><script>
+let user={
+name:"asads",
+surname:"asasasa",
+get fullName(){
+return `${this.name} ${this.surname}`;
+},
+set fullName(value){
+	[this.name,this.surname]=value.split(" ");
+}
+
+}
+user.fullName="Sunil Kudupudi";
+alert(user.name);
+
+</script>

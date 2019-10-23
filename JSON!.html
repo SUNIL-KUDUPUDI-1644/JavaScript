@@ -1,0 +1,27 @@
+<!DOCTYPE html><script>
+'use strict';
+let room = {
+  number: 23,
+   venue:"Godrej",
+};
+
+let meetup = {
+  title: "Conference",
+  participants: [{name: "John"}, {name: "Alice"}],
+  place: room.number ,// meetup references room
+};
+
+meetup.location=room.venue;
+room.occupiedBy = meetup; // room references meetup
+
+alert( JSON.stringify(meetup, function replacer(key,value){alert(`${key} : ${value}`); return (key=='occupiedBy')?undefined:value;} ,2) );
+/*
+the first value will be [object Object] cause the first iteration is special and it returns "":[object Object] here the value is target object
+In this case meetup is the target object.
+{
+  "title":"Conference",
+  "participants":[{"name":"John"},{"name":"Alice"}],
+  "place":{"number":23}
+}
+*/
+</script>

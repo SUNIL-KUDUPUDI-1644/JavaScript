@@ -1,0 +1,34 @@
+<!DOCTYPE html><script>
+
+/*Objects are powerfull and they contain three flag properties which on default to be truee..
+
+the properties are--
+1.writable -- true -->can be writable or changeable or else readable only.
+2.enumerable -- true --> can be iterated through loops.
+3.configurable -- true --> properties can be deleted and can be modified.
+
+the method Object.getOwnPropertyDescriptor returns properties of that object..*/
+
+let user={
+name:"asdasd",
+age:20,
+}
+let desc=Object.getOwnPropertyDescriptor(user,'name');
+alert(JSON.stringify(desc,null,2));
+
+/*To change these properties we can use Object.defineProperty*/
+
+Object.defineProperty(user,"height",{value:5.45});
+
+ desc = Object.getOwnPropertyDescriptor(user, 'height');
+
+alert( JSON.stringify(desc, null, 2 ) );
+Object.defineProperty(user,"age",{writable:false});
+
+user.age=12;
+alert(user.age);
+
+/*If the configurable is false then we can't able to change the value it's a forever sealed constant*/
+
+
+</script>

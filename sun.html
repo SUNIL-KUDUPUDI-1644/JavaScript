@@ -1,0 +1,19 @@
+<!DOCTYPE html><script>
+//methods,properties with undefined and symbols are ignored in JSON.stringify(OBJECT)
+let user = {
+  name:"asas",
+  sayHi() { // ignored
+    alert("Hello");
+  },
+  [Symbol("id")]: 123, // ignored
+  something: undefined // ignored
+};
+
+let person={
+name:"assas",
+}
+user.customer=person;
+//Shouldn't convert circular reference to JSON  person.employer=user
+
+alert( JSON.stringify(user) ); // {} (empty object)
+</script>

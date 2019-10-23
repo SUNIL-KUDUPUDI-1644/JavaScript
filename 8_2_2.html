@@ -1,0 +1,22 @@
+<DOCTYPEHTML><script>
+let student={
+	notes:[],
+	submit(yes){
+	this.notes.push(yes);
+	}
+}
+let sunil={
+	
+	__proto__:student,
+	notes:[],	
+}
+let swamy={
+
+	__proto__:student,
+	notes:[],
+}
+sunil.submit("yes submitted");
+alert(sunil.notes);
+alert(swamy.notes);
+
+</script>

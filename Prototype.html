@@ -1,0 +1,36 @@
+<DOCTYPEHTML><script>
+
+let animal={
+walk(){
+alert("animal Walks");
+},
+sleep(){
+alert("animal sleeping");
+}
+}
+let rabbit={
+__proto__:animal,
+name:"White Rabbit",
+}
+
+let lion={
+__proto__:rabbit,
+name:"LION",
+}
+
+alert(lion.name);
+alert(lion.walk());
+alert(rabbit.sleep());
+/*hasOwnProperty returns boolean value and checks if the property belongs to same object or not*/
+for(let prop in animal){
+let isOwn=animal.hasOwnProperty(prop);
+if(isOwn){
+alert("yes "+`${prop}`+" is own.");
+}
+else{
+alert("NO "+`${prop}`+" is inherited");
+}
+}
+
+
+</script>
